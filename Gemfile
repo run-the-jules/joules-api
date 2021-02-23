@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'fast_jsonapi'
 gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
