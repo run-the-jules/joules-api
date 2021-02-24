@@ -18,6 +18,7 @@ gem 'figaro'
 group :development, :test do
   gem 'pry'
   gem 'rubocop'
+  gem 'travis'
 end
 
 group :test do
