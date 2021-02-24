@@ -11,5 +11,8 @@ describe UsageService do
     result = UsageService.kwh_usage("/api/v1/users/#{usage.user_id}/usage")
 
     expect(result).to be_a(Hash)
+    expect(result).to have_key(:user_uid)
+    expect(result).to have_key(:readings)
+    expect(result).to have_key(:meter_id)
   end
 end
