@@ -4,8 +4,6 @@ class UsagesFacade
       create_usage(id)
     end
 
-
-
     private 
 
     def create_usage(id)
