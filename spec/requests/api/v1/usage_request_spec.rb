@@ -1,21 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'usage api' do
-  describe 'create a usage model responding to frontend' do
-    it 'creates a model' do
-      usage = create(:usage, id: 1)
+  describe 'shows usage information' do
+    it 'returns the applicable existing usage data' do
 
-      usage_params = {
-        id: 1
-      }
+      id = 1
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/usage", headers: headers, params: JSON.generate({usage: usage_params})
+      get "/api/v1/usages/#{id}", headers: headers, params: JSON.generate({usage: id})
 
-      created_usage = Usage.last
+      data = JSON.parse(response.body)
 
-      expect(response.status).to eq 201
-      expect(created_usage.user_id).to eq(usage_params[:id])
+      expect(response.status).to eq(200)
+      expect(data[:user_id]).to eq(usage.user_id)
+
+
     end
   end
 end
