@@ -12,7 +12,7 @@ RSpec.describe 'usage api' do
       data = JSON.parse(response.body)
 
       expect(response.status).to eq(200)
-      expect(data[:user_id]).to eq(usage.user_id)
+      expect(data[:user_id]).to eq(id)
 
 
     end
