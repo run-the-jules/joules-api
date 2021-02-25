@@ -1,11 +1,9 @@
 class UsageService
   class << self
     def kwh_usage(endpoint, params = {})
-      # Update Usage model/table
       response = connection.get(endpoint) do |req|
-        #binding.pry
-                   req.params = params
-                 end
+        req.params = params
+      end
       parse(response)
     end
 
