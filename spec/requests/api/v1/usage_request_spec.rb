@@ -13,6 +13,7 @@ RSpec.describe 'usage api' do
       expect(response.status).to eq(200)
       data = JSON.parse(response.body, symbolize_names:true)[:data]
 
+      binding.pry
       expect(data).to have_key(:id)
       expect(data).to have_key(:type)
       expect(data).to have_key(:attributes)
