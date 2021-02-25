@@ -1,7 +1,7 @@
 class UsageService
   class << self
     def kwh_usage(endpoint, params = {})
-      #Update Usage model/table
+      # Update Usage model/table
       response = connection.get(endpoint) do |req|
                    req.params = params
                  end

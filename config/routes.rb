@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :usage, only: :create
+      resources :usages, only: :show
     end
   end
 end
