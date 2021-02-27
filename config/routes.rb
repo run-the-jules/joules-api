@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :usages, only: :show
-      resources :friendships, only: :create
+      resources :friendships, only: %i[index create]
     end
   end
 end

@@ -1,4 +1,9 @@
 class Api::V1::FriendshipsController < ApplicationController
+  def index
+    binding.pry
+    render json: PointsSerializer.new(friend_points)
+  end
+  
   def create
     friendship = Friendship.new(friendship_params)
     if friendship.save
