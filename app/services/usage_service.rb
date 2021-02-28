@@ -1,6 +1,5 @@
 class UsageService
   class << self
-
     def fetch_utilities
       response = connection.get("/utilities")
       parse(response)

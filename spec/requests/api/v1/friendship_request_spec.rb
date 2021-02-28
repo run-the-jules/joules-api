@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'friendship request' do 
   describe "friends' index" do 
-    it "returns friends' monthly points" do 
+    xit "returns friends' monthly points" do 
       usages = create_list(:usage, 5) do |usage, i|
         usage.update(user_id: (1 + i ))
       end
