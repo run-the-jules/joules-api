@@ -15,6 +15,7 @@ class MeterActivationFacade
     end
 
     def get_bills(meter_uid)
+      binding.pry
       bills = UsageService.get_bills(meter_uid)[:data]
       bills.map do |bill|
         create_usage(bill)

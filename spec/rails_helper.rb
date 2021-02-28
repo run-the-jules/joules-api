@@ -71,4 +71,11 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  VCR.configure do |config|
+    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+    config.hook_into :webmock
+    config.default_cassette_options = { re_record_interval: 7.days }
+    config.configure_rspec_metadata!
+  end
 end
