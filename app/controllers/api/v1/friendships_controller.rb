@@ -1,7 +1,7 @@
 class Api::V1::FriendshipsController < ApplicationController
   def index
     binding.pry
-    render json: PointsSerializer.new(friend_points)
+    render json: FriendshipsFacade.compare(params[:id], params[:friend_ids])
   end
   
   def create
