@@ -1,5 +1,6 @@
 class Api::V1::UsagesController < ApplicationController
+
   def show
-    render json: UsagesSerializer.new(UsagesFacade.utility_info(params[:id]))
+    render json: UsagesSerializer.new(Usage.where(user_id: params[:user_id]))
   end
 end

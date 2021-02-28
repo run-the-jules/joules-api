@@ -28,13 +28,6 @@ class UsageService
       parse(response)
     end
 
-    def kwh_usage(endpoint, params = {})
-      response = connection.get(endpoint) do |req|
-        req.params = params
-      end
-      parse(response)
-    end
-
     private
 
     def parse(data)
