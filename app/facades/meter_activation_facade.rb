@@ -2,10 +2,10 @@ class MeterActivationFacade
   class << self
 
     def fetch_usages(params)
-      if params[:email] && params[:utility]
-        UsageService.new_user(params)
-      elsif params[:utilities]
+      if params[:utilities]
         UsageService.fetch_utilities
+      elsif params[:email] && params[:utility]
+        UsageService.new_user(params)
       elsif params[:referral]
         data = UsageService.get_meters(params[:referral])[:data]
         data[:meters].flat_map do |meter|
