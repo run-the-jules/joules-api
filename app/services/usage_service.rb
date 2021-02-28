@@ -1,5 +1,33 @@
 class UsageService
   class << self
+
+    def fetch_utilities
+      response = connection.get("/utilities")
+      parse(response)
+    end
+
+    def new_user(params)
+      response = connection.get("/new_user") do |req|
+        req.params["email"] = params[:email]
+        req.params["utility"] = params[:utility]
+      end
+      parse(response)
+    end
+
+    def get_meters(referral)
+      response = connection.get("/get_meters") do |req|
+        req.params["referral"] = referral
+      end
+      parse(response)
+    end
+
+    def get_bills(meter_uid)
+      response = connection.get("/bills") do |req|
+        req.params["meter_uid"] = meter_uid
+      end
+      parse(response)
+    end
+
     def kwh_usage(endpoint, params = {})
       response = connection.get(endpoint) do |req|
         req.params = params
@@ -14,8 +42,7 @@ class UsageService
     end
 
     def connection
-      Faraday.new('https://mysterious-ravine-12345.herokuapp.com')
-      #Use actual URL from Sinatra
+      Faraday.new('https://joules-microservice.herokuapp.com/')
     end
   end
 end
