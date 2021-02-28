@@ -1,6 +1,5 @@
 class Api::V1::FriendshipsController < ApplicationController
   def index
-    binding.pry
     render json: FriendshipsFacade.compare(params[:id], params[:friend_ids])
   end
   
