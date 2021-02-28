@@ -12,7 +12,6 @@ RSpec.describe 'usage request' do
       get "/api/v1/usages/#{user_id}"
       expect(response.status).to eq(200)
       result = JSON.parse(response.body, symbolize_names:true)
-      # binding.pry 
       expect(result).to be_a(Hash)
       data = result[:data]
       data.each do |reading|
