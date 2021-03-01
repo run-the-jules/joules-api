@@ -3,10 +3,6 @@ require 'rails_helper'
 describe MeterActivationFacade do
   describe 'get_bills' do
     it 'brings user utility information', :vcr do
-      # usage_stub = File.read("spec/fixtures/usage_data.json")
-      # stub_request(:get, "https://joules-microservice.herokuapp.com/api/v1/users/1/usage").
-      # to_return(status: 200, body: usage_stub)
-
       meter_id = 711267
       usages = MeterActivationFacade.get_bills(meter_id)
       usages.each do |usage|
@@ -20,4 +16,21 @@ describe MeterActivationFacade do
     end
   end
 
+  describe 'authorize a user to activate meters' do 
+    it "returns a referral url if provided email and utilty", :vcr do 
+      params = {email: "test5@gmail.com", utility: "ACE"}
+      data = MeterActivationFacade.new_user(params)
+      #is there a check for the expetation to be an url?
+      expect(data).to be_a(String)
+    end
+
+    it "returns meter ids if provided a referral number", :vcr do 
+      params = {referral: 186139}
+      data = MeterActivationFacade.referral(params)
+      expect(data).to be_an(Hash)
+      data[:data].each do |meter|
+        expect(meter).to have_key(:meter_uid)
+      end
+    end
+  end
 end

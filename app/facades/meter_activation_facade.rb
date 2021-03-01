@@ -1,17 +1,25 @@
 class MeterActivationFacade
   class << self
 
-    def fetch_usages(params)
-      if params[:utilities]
-        UsageService.fetch_utilities
-      elsif params[:email] && params[:utility]
-        UsageService.new_user(params)
-      elsif params[:referral]
-        data = UsageService.get_meters(params[:referral])[:data]
-        data[:meters].flat_map do |meter|
-          get_bills(meter)
-        end
-      end
+    def fetch_utilities(params)
+      # if params[:utilities]
+      UsageService.fetch_utilities
+      # elsif params[:email] && params[:utility]
+      #   UsageService.new_user(params)[:data][:url]
+      # elsif params[:referral]
+      #   data = UsageService.get_meters(params[:referral])[:data]
+      #   data[:meters].flat_map do |meter|
+      #     get_bills(meter)
+      #   end
+      # end
+    end
+
+    def new_user(params)
+      UsageService.new_user(params)[:data][:url]
+    end
+
+    def referral(params)
+      data = UsageService.get_meters(params[:referral])
     end
 
     def get_bills(meter_uid)
