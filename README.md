@@ -119,7 +119,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Joe Jiang - [Github](https://github.com/ninesky00) [LinkedIn](https://www.linkedin.com/in/joe-jiang01/)
 
 
-Project Link: [https://github.com/run-the-jules/joules-utility-microservice](https://github.com/run-the-jules/joules-utility-microservice)
+Frontend Project Link: [https://github.com/run-the-jules/run-the-jules](https://github.com/run-the-jules/run-the-jules)
+
+Microservice Project Link: [https://github.com/run-the-jules/joules-utility-microservice](https://github.com/run-the-jules/joules-utility-microservice)
 
 
 
