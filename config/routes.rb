@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :meter_activation, only: :index
       resources :usages, only: :show
+      resources :friendships, only: %i[index create]
       resources :providers, only: :index
     end
   end
