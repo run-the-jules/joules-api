@@ -1,8 +1,8 @@
-# RunTheJules-API
+# jules-api
 
 ## Background and Description
 
-"RunTheJules-API" is the backend API only application that handles the bulk of data interface for other applications. RunTheJules-API is part of a consultancy group project Run The Jules that requires students to build service-oreinted architecture application that allows the user to authenticate through Google and their electricity provider to compare their energy usage with other users.
+"jules-api" is the backend API only application that handles the bulk of data interface for other applications. jules-api is part of a consultancy group project Run The Jules that requires students to build service-oreinted architecture application that allows the user to authenticate through Google and their electricity provider to compare their energy usage with other users.
 
 
 ## Goals accomplished 
