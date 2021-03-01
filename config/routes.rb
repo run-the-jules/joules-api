@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :meter_activation, only: :index
       resources :usages, only: :show
       resources :friendships, only: %i[index create]
+      resources :providers, only: :index
     end
   end
 end
