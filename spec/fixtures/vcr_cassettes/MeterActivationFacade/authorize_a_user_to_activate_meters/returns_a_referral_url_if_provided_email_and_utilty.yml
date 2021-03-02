@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 02 Mar 2021 02:51:18 GMT
+      - Tue, 02 Mar 2021 04:31:56 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -38,6 +38,6 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"authorization_uid":null,"created":"2021-03-02T02:51:18.751752+00:00","customer_email":"","disabled":false,"is_archived":false,"scope":{},"template_uid":"33ae3462","uid":"144066","updated":"2021-03-02T02:51:18.771812+00:00","url":"https://utilityapi.com/authorize/iandouglas_turing?f=c995d447-f333-4a1e-ab74-89a3932c8135","user_email":"iandouglas@turing.io","user_uid":"101879","utility":"ACE"}}'
-  recorded_at: Tue, 02 Mar 2021 02:51:18 GMT
+      string: '{"data":{"authorization_uid":null,"created":"2021-03-02T04:31:56.350700+00:00","customer_email":"","disabled":false,"is_archived":false,"scope":{},"template_uid":"33ae3462","uid":"144073","updated":"2021-03-02T04:31:56.371542+00:00","url":"https://utilityapi.com/authorize/iandouglas_turing?f=8ad6b2e4-a3e9-4a54-bd3f-8b0a207c81d8","user_email":"iandouglas@turing.io","user_uid":"101879","utility":"ACE"}}'
+  recorded_at: Tue, 02 Mar 2021 04:31:56 GMT
 recorded_with: VCR 6.0.0
