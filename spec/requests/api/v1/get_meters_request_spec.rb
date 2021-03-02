@@ -18,9 +18,10 @@ RSpec.describe 'get meter controller' do
     expect(response.status).to eq(400)
   end
 
-  xit 'returns an error when referral params are not valid', :vcr do
-    #put back once micro service can handle this sad path
+  it 'returns an error when referral params are not valid', :vcr do
     get '/api/v1/get_meters?referral=23498710283918724'
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(200)
+    expect(response.body).to be_a(String)
+    expect(response.body).to eq('null')
   end
 end
