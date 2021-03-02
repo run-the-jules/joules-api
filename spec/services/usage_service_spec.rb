@@ -10,6 +10,7 @@ describe UsageService do
       expect(utility).to have_key(:id)
       expect(utility).to have_key(:utility_name)
     end
+    sleep 6
   end
 
   it 'can get bills', :vcr do
@@ -28,14 +29,7 @@ describe UsageService do
       expect(cycle[:meter_uid]).to be_a(String)
       expect(cycle[:user_uid]).to be_a(Numeric)
     end
-    # params = {referral: 186139}
-    # result = MeterActivationFacade.fetch_usages(params)
-    # expect(result).to be_a(Array)
-    # result.each do |usage|
-    #   expect(usage).to be_a(Usage)
-    #   expect(usage.kwh).to be_an(Integer)
-    # end
-    # expect(result.first.kwh).to eq(743)
+    sleep 6
   end
 
   it "can retrieve a referral url when submitting a form for a new user", :vcr do 
@@ -44,6 +38,7 @@ describe UsageService do
     data = UsageService.new_user(params)[:data]
     expect(data).to have_key(:url)
     expect(data).to have_key(:user_uid)
+    sleep 6
   end
 
   it "with the referral url, we can get customer's meter uid", :vcr do 
@@ -53,5 +48,6 @@ describe UsageService do
     data.each do |meter|
       expect(meter).to have_key(:meter_uid)
     end
+    sleep 6
   end
 end

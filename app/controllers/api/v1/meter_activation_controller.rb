@@ -14,9 +14,6 @@ class Api::V1::MeterActivationController < ApplicationController
     end
   end
 
-  # def utilities
-  #   render json: UsageService.fetch_utilities(params[:utilities])
-  # end
 
   # def new_user
   #   render json: MeterActivationFacade.new_user(params)

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://joules-microservice.herokuapp.com/get_meters?referral=186139
+    uri: https://joules-microservice.herokuapp.com/api/v1/get_meters?referral=186139
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Mon, 01 Mar 2021 00:37:53 GMT
+      - Tue, 02 Mar 2021 02:51:32 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"meter_uid":"711267"}]}'
-  recorded_at: Mon, 01 Mar 2021 00:37:54 GMT
+  recorded_at: Tue, 02 Mar 2021 02:51:32 GMT
 recorded_with: VCR 6.0.0
