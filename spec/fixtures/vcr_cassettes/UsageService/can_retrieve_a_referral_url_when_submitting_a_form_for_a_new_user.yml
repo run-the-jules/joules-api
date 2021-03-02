@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://joules-microservice.herokuapp.com/new_user?email=test5@gmail.com&utility=ACE
+    uri: https://joules-microservice.herokuapp.com/api/v1/new_user?email=test5@gmail.com&utility=ACE
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Mon, 01 Mar 2021 00:42:22 GMT
+      - Tue, 02 Mar 2021 04:32:43 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -38,6 +38,6 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"authorization_uid":null,"created":"2021-03-01T00:42:22.948375+00:00","customer_email":"","disabled":false,"is_archived":false,"scope":{},"template_uid":"33ae3462","uid":"143804","updated":"2021-03-01T00:42:22.966251+00:00","url":"https://utilityapi.com/authorize/iandouglas_turing?f=ca38be45-7e2c-44f1-b12e-4512b96e5159","user_email":"iandouglas@turing.io","user_uid":"101879","utility":"ACE"}}'
-  recorded_at: Mon, 01 Mar 2021 00:42:22 GMT
+      string: '{"data":{"authorization_uid":null,"created":"2021-03-02T04:32:44.342068+00:00","customer_email":"","disabled":false,"is_archived":false,"scope":{},"template_uid":"33ae3462","uid":"144075","updated":"2021-03-02T04:32:44.351229+00:00","url":"https://utilityapi.com/authorize/iandouglas_turing?f=f2024100-ec2b-451d-9aa2-54c6206957d1","user_email":"iandouglas@turing.io","user_uid":"101879","utility":"ACE"}}'
+  recorded_at: Tue, 02 Mar 2021 04:32:44 GMT
 recorded_with: VCR 6.0.0

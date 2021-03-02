@@ -12,7 +12,7 @@ deploy:
   provider: heroku
   api_key:
     secure: kPbpxHPljL9dCC9p51P8x1+cCR2s8CgxbXw091gYaISKMiLpTeT1HjqgwTEFpwXJu6gjUAjjToVKTkOEAOzyV86m+D+/A5Ea86fOr1dOsaT19bB1+7aG0+RRoP3wsap4MnzP7qzK4JQsxg7uKkJNKd6nw8+CkZwJGrnsbVUX/Sh3zoAQxeFyiAK+Kvb5BYWXFyF+85kqy57NpHRXeAby/n+OuBzouysHefP4Z86Fu6vZ0oc28XfUdeIa6LzU3aK+w/IepJQMc2Ebw9+gBS4TRRhVwmKavqsQfj1QuqeMjaIaIFlF4v31qP3MFldeGns4kJLGcY3XTqplkvNhq21o/yHHipSjvZmzmaLC4os4IfQ9xHUpMothmzKXBS5osui6oEwvGG5lKuLDhROHYmS2Oy5MUdcJm5EWDguk/U0oLPmfs+ipWM1W2mrNLpn1YGcAMZVxn9M3875C7+O0V3jrcpBSUtyD7vct3mT8fX4KMVvIm19ePJExwqc90XHxprlpXjCska7lUB/CLM1w3BqBRSpbeZsv0J/4EfSCpjApuOe4QnwGH/IHh1TiWd/76cRnEDhi7IJGYa+s5h9zVuUoG0V6jj7fzAkN7N9pSDYoDP6NIq4jMAOpvrqSDG9DdxkCcTh/PzboWRe01STlHqgD/gaQ4D4J/hqCXAKPm2GldCE=
-  app: mysterious-ravine-39718
+  app: jules-api
   run: rails db:migrate
   on:
     branch: main

@@ -22,13 +22,15 @@ describe MeterActivationFacade do
       data = MeterActivationFacade.new_user(params)
       #is there a check for the expetation to be an url?
       expect(data).to be_a(String)
+      expect(data).to match(/https:/)
+      expect(data).to match(/.com/)
     end
 
     it "returns meter ids if provided a referral number", :vcr do 
       params = {referral: 186139}
       data = MeterActivationFacade.referral(params)
-      expect(data).to be_an(Hash)
-      data[:data].each do |meter|
+      expect(data).to be_an(Array)
+      data.each do |meter|
         expect(meter).to have_key(:meter_uid)
       end
     end

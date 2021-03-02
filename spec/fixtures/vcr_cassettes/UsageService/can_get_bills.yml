@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://joules-microservice.herokuapp.com/bills?meter_uid=711267
+    uri: https://joules-microservice.herokuapp.com/api/v1/bills?meter_uid=711267
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Mon, 01 Mar 2021 00:42:21 GMT
+      - Tue, 02 Mar 2021 04:32:43 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"start_date":"2021-01-31T16:00:00.000000-08:00","end_date":"2021-02-28T16:00:00.000000-08:00","kwh":743.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-12-31T16:00:00.000000-08:00","end_date":"2021-01-31T16:00:00.000000-08:00","kwh":731.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-11-30T16:00:00.000000-08:00","end_date":"2020-12-31T16:00:00.000000-08:00","kwh":756.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-10-31T17:00:00.000000-07:00","end_date":"2020-11-30T16:00:00.000000-08:00","kwh":810.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-09-30T17:00:00.000000-07:00","end_date":"2020-10-31T17:00:00.000000-07:00","kwh":779.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-08-31T17:00:00.000000-07:00","end_date":"2020-09-30T17:00:00.000000-07:00","kwh":938.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-07-31T17:00:00.000000-07:00","end_date":"2020-08-31T17:00:00.000000-07:00","kwh":846.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-06-30T17:00:00.000000-07:00","end_date":"2020-07-31T17:00:00.000000-07:00","kwh":903.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-05-31T17:00:00.000000-07:00","end_date":"2020-06-30T17:00:00.000000-07:00","kwh":833.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-04-30T17:00:00.000000-07:00","end_date":"2020-05-31T17:00:00.000000-07:00","kwh":652.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-03-31T17:00:00.000000-07:00","end_date":"2020-04-30T17:00:00.000000-07:00","kwh":889.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-02-29T16:00:00.000000-08:00","end_date":"2020-03-31T17:00:00.000000-07:00","kwh":1017.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2020-01-31T16:00:00.000000-08:00","end_date":"2020-02-29T16:00:00.000000-08:00","kwh":837.0,"meter_uid":"711267","user_uid":185072},{"start_date":"2019-12-31T16:00:00.000000-08:00","end_date":"2020-01-31T16:00:00.000000-08:00","kwh":837.0,"meter_uid":"711267","user_uid":185072}]}'
-  recorded_at: Mon, 01 Mar 2021 00:42:22 GMT
+  recorded_at: Tue, 02 Mar 2021 04:32:43 GMT
 recorded_with: VCR 6.0.0
