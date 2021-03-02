@@ -6,7 +6,6 @@ class MeterActivationFacade
 
     def new_user(params)
       data = UsageService.new_user(params)[:data][:url]
-      # binding.pry
     end
 
     def referral(params)
