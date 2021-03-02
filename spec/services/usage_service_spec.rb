@@ -38,7 +38,7 @@ describe UsageService do
     # expect(result.first.kwh).to eq(743)
   end
 
-  it "can retrieve a referral url when submitting a form for a new user", :vcr do 
+  it "can retrieve a referral url when submitting a form for a new user", :vcr do
     #this test will have to change when Ian's UtilityAPI account is setup
     params = {email: "test5@gmail.com", utility: 'ACE'}
     data = UsageService.new_user(params)[:data]
@@ -46,7 +46,7 @@ describe UsageService do
     expect(data).to have_key(:user_uid)
   end
 
-  it "with the referral url, we can get customer's meter uid", :vcr do 
+  it "with the referral url, we can get customer's meter uid", :vcr do
     referral = 186139
     data = UsageService.get_meters(referral)[:data]
     expect(data).to be_an(Array)

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "providers api endpoint", type: :request do
   describe "(happy path)", :vcr do
-    it "returns a list of all available providers" do
+    it "returns a list of all available providers", :vcr do
 
       get "/api/v1/providers"
       expect(response.status).to eq(200)
