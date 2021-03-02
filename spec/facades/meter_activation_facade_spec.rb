@@ -14,14 +14,30 @@ describe MeterActivationFacade do
         expect(usage.meter_id).to be_a(String)
       end
     end
-  end
 
-  it 'returns meter ids if provided a referral number', :vcr do
-    params = { referral: 186_139 }
-    data = MeterActivationFacade.referral(params)
-    expect(data).to be_an(Array)
-    data.each do |meter|
-      expect(meter).to have_key(:meter_uid)
+    it 'returns meter ids if provided a referral number', :vcr do
+      params = { referral: 186_139 }
+      data = MeterActivationFacade.referral(params)
+      expect(data).to be_an(Array)
+      data.each do |meter|
+        expect(meter).to have_key(:meter_uid)
+      end
+    end
+
+    it 'returns an error when referral params are not present or a number', :vcr do
+      params = { referral: 'not a referral' }
+      data = MeterActivationFacade.referral(params)
+      expect(data).to eq(nil)
+
+      params = { referral: '' }
+      data = MeterActivationFacade.referral(params)
+      expect(data).to eq(nil)
+    end
+
+    it 'returns an error when referral params are not valid', :vcr do
+      params = { referral: 1_232_349_127_384 }
+      data = MeterActivationFacade.referral(params)
+      expect(data).to eq(nil)
     end
   end
 end

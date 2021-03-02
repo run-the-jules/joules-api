@@ -1,9 +1,5 @@
 class MeterActivationFacade
   class << self
-    def fetch_utilities(_params)
-      UsageService.fetch_utilities
-    end
-
     def referral(params)
       data = UsageService.get_meters(params[:referral])[:data]
       sleep 20
