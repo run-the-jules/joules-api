@@ -1,12 +1,32 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+[![Build Status](https://travis-ci.com/run-the-jules/jules-api.svg?branch=main)](https://travis-ci.com/run-the-jules/jules-api)
+
 # jules-api
 
 ### About this App
 
-Jules API is the server-side application of Run the Jules. It consumes the utilities microservice to provide historical usage data and calcuate points for Run The Jules users. Users can sign up and compare their electricity usage with their friends or to an anynomous average in their area!
+Jules API is the server-side application of Run the Jules. It consumes the utilities microservice to provide historical usage data and calcuate points for Run The Jules users. Users can sign up and compare their electricity usage with their friends or to an anonymous average in their area!
 
+### Background and Description
+
+"jules-api" is the backend API only application that handles the bulk of data interface for other applications. jules-api is part of a consultancy group project Run The Jules that requires students to build service-oreinted architecture application that allows the user to authenticate through Google and their electricity provider to compare their energy usage with other users.
 This project is deployed on:
 
-- [Heroku here](https://mysterious-ravine-39718.herokuapp.com/)
+### Goals accomplished
+Consumed microservice API endpoints to package data for the frontend to consume
+Robust unit and integration testing to ensure data quality
+Navigate working together with a larger application base with many moving parts
+Learned application design from the perspective of users' needs
+Navigate how a small change can have huge impact in a SOA application
+Setup continuous integration and deployment
+Worked in short 3 or 4 day "Sprints" schedule
+Worked in pairs
+Deployed on Heroku, see endpoints
+
 
 ## Versions
 
@@ -14,10 +34,6 @@ This project is deployed on:
 
 - Rails 5.2.4.3
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 
 
 <!-- TABLE OF CONTENTS -->
@@ -103,7 +119,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Joe Jiang - [Github](https://github.com/ninesky00) [LinkedIn](https://www.linkedin.com/in/joe-jiang01/)
 
 
-Project Link: [https://github.com/run-the-jules/joules-utility-microservice](https://github.com/run-the-jules/joules-utility-microservice)
+Frontend Project Link: [https://github.com/run-the-jules/run-the-jules](https://github.com/run-the-jules/run-the-jules)
+
+Microservice Project Link: [https://github.com/run-the-jules/joules-utility-microservice](https://github.com/run-the-jules/joules-utility-microservice)
 
 
 
