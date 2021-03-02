@@ -1,18 +1,12 @@
 class MeterActivationFacade
   class << self
-    def fetch_utilities(params)
-      UsageService.fetch_utilities
-    end
-
-    def new_user(params)
-      data = UsageService.new_user(params)[:data][:url]
-    end
-
     def referral(params)
       data = UsageService.get_meters(params[:referral])[:data]
       sleep 20
-      data.each do |meter|
-        get_bills(meter[:meter_uid])
+      unless data.nil?
+        data.each do |meter|
+          get_bills(meter[:meter_uid])
+        end
       end
       data
     end
@@ -24,14 +18,14 @@ class MeterActivationFacade
       end
     end
 
-    private 
+    private
 
     def create_usage(data)
-      Usage.create(user_id: data[:user_uid], 
-                  kwh: data[:kwh], 
-                  meter_id: data[:meter_uid], 
-                  start_date: data[:start_date],
-                  end_date: data[:end_date])
+      Usage.create(user_id: data[:user_uid],
+                   kwh: data[:kwh],
+                   meter_id: data[:meter_uid],
+                   start_date: data[:start_date],
+                   end_date: data[:end_date])
     end
   end
 end
