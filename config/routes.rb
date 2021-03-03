@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       resources :friendships, only: %i[index create]
     end
   end
+  match '*unmatched_route', :to => 'application#raise_not_found!', :via => :all
 end

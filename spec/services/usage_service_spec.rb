@@ -32,12 +32,21 @@ describe UsageService do
     end
   end
 
-  it 'can retrieve a referral url when submitting a form for a new user', :vcr do
-    # this test will have to change when Ian's UtilityAPI account is setup
-    params = { email: 'test5@gmail.com', utility: 'ACE' }
+  it 'bills sad path', :vcr do
+    meter_id = "not a meter id"
+    data = UsageService.get_bills(meter_id)
+
+    expect(data).to be_a(Hash)
+    expect(data).to have_key(:error)
+  end
+
+  it "can retrieve a referral url when submitting a form for a new user", :vcr do
+    #this test will have to change when Ian's UtilityAPI account is setup
+    params = {email: "test5@gmail.com", utility: 'ACE'}
     data = UsageService.new_user(params)[:data]
     expect(data).to have_key(:url)
     expect(data).to have_key(:user_uid)
+
   end
 
 
@@ -55,8 +64,8 @@ describe UsageService do
     expect(data[:data][:error]).to eq('invalid_utility')
   end
 
-  it "with the referral url, we can get customer's meter uid", :vcr do
-    referral = 186_139
+it "with the referral url, we can get customer's meter uid", :vcr do
+    referral = 186139
     data = UsageService.get_meters(referral)[:data]
     expect(data).to be_an(Array)
     data.each do |meter|

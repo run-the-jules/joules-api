@@ -11,11 +11,20 @@ RSpec.describe 'get meter controller' do
     end
   end
 
+  it 'sad path' do
+    get '/api/v1/get_meters?referral=not_a_referral'
+    expect(response.status).to eq(404)
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(data).to be_a(Hash)
+    expect(data).to have_key(:error)
+  end
+
   it 'returns an error when referral params are not present or a number', :vcr do
     get '/api/v1/get_meters?referral='
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(404)
     get '/api/v1/get_meters?referral=notareferral'
-    expect(response.status).to eq(400)
+    expect(response.status).to eq(404)
   end
 
   it 'returns an error when referral params are not valid', :vcr do
