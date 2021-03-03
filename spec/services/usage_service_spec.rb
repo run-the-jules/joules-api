@@ -10,7 +10,7 @@ describe UsageService do
       expect(utility).to have_key(:id)
       expect(utility).to have_key(:utility_name)
     end
-    
+
   end
 
   it 'can get bills', :vcr do
@@ -29,7 +29,14 @@ describe UsageService do
       expect(cycle[:meter_uid]).to be_a(String)
       expect(cycle[:user_uid]).to be_a(Numeric)
     end
-    
+  end
+
+  it 'bills sad path', :vcr do
+    meter_id = "not a meter id"
+    data = UsageService.get_bills(meter_id)
+
+    expect(data).to be_a(Hash)
+    expect(data).to have_key(:error)
   end
 
   it "can retrieve a referral url when submitting a form for a new user", :vcr do
@@ -38,7 +45,7 @@ describe UsageService do
     data = UsageService.new_user(params)[:data]
     expect(data).to have_key(:url)
     expect(data).to have_key(:user_uid)
-    
+
   end
 
   it "with the referral url, we can get customer's meter uid", :vcr do
@@ -48,6 +55,6 @@ describe UsageService do
     data.each do |meter|
       expect(meter).to have_key(:meter_uid)
     end
-    
+
   end
 end
