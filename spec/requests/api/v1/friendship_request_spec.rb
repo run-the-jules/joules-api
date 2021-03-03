@@ -14,7 +14,6 @@ RSpec.describe 'friendship request' do
       get '/api/v1/friendships', params: {user_id: user_id}
       expect(response.status).to eq(200)
       data = JSON.parse(response.body, symbolize_names:true)[:data]
-      # binding.pry
       expect(data[:type]).to eq("friend_usage")
       expect(data[:attributes][:user_id]).to eq(user_id)
       expect(data[:attributes]).to have_key(:user_kwh)
