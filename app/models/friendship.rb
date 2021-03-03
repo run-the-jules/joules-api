@@ -6,8 +6,4 @@ class Friendship < ApplicationRecord
     where('user_id = ?', user_id)
     .pluck(:following_id)
   end
-
-  def usages
-    Usage.where(user_id: :following_id)
-  end
 end
