@@ -10,7 +10,7 @@ class MeterActivationFacade
 
     def referral(params)
       data = UsageService.get_meters(params[:referral])[:data]
-      # sleep 30
+      sleep 30
       unless data.nil?
         data.each do |meter|
           get_bills(meter[:meter_uid], params[:id])
