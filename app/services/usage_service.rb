@@ -15,7 +15,7 @@ class UsageService
 
     def get_meters(referral)
       response = connection.get('/api/v1/get_meters') do |req|
-        req.params['referral'] = referral.to_i
+        req.params['referral'] = referral
       end
       parse(response)
     end

@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 02 Mar 2021 22:44:02 GMT
+      - Wed, 03 Mar 2021 03:35:21 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"meter_uid":"711267"}]}'
-  recorded_at: Tue, 02 Mar 2021 22:44:02 GMT
+  recorded_at: Wed, 03 Mar 2021 03:35:21 GMT
 recorded_with: VCR 6.0.0

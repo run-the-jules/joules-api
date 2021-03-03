@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :new_users, :get_meters, :providers, only: :index
       resources :usages, only: :show
+      resources :friendships, only: %i[index create]
     end
   end
   match '*unmatched_route', :to => 'application#raise_not_found!', :via => :all

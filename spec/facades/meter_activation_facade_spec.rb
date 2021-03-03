@@ -3,8 +3,9 @@ require 'rails_helper'
 describe MeterActivationFacade do
   describe 'get_bills' do
     it 'brings user utility information', :vcr do
-      meter_id = 711_267
-      usages = MeterActivationFacade.get_bills(meter_id)
+      user_id = 2
+      meter_id = 711267
+      usages = MeterActivationFacade.get_bills(meter_id, user_id)
       usages.each do |usage|
         expect(usage).to be_a(Usage)
         expect(usage.user_id).to be_a(Numeric)
