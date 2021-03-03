@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       resources :usages, only: :show
     end
   end
+  match '*unmatched_route', :to => 'application#raise_not_found!', :via => :all
 end
