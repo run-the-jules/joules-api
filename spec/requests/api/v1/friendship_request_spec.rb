@@ -1,51 +1,52 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe 'friendship request' do 
-#   describe "friends' index" do 
-#     xit "returns friends' monthly points" do 
-#       usages = create_list(:usage, 5) do |usage, i|
-#         usage.update(user_id: (1 + i ))
-#       end
-#       user_id = usages[0].user_id
-#       friend_ids = usages[1..-1].map { |usage| usage.user_id}
+RSpec.describe 'friendship request' do 
+  describe "friends' index" do 
+    it "returns user friends' ids" do 
+      create_list(:usage, 6 ) do |usage, i|
+        usage.update(user_id: i + 1)
+      end
+      users = create_list(:friendship, 5, user_id: 1) do |friendship, i|
+        friendship.update(following_id: (2 + i ))
+      end
+      user_id = users[0].user_id
+      friend_ids = users[0..-1].map { |friendship| friendship.following_id}
+      get '/api/v1/friendships', params: {user_id: user_id}
+      expect(response.status).to eq(200)
+      data = JSON.parse(response.body, symbolize_names:true)[:data]
+      # binding.pry
+      expect(data[:type]).to eq("friend_usage")
+      expect(data[:attributes][:user_id]).to eq(user_id)
+      expect(data[:attributes]).to have_key(:user_kwh)
+      data[:attributes][:friends_data].each do |friend, idx|
+        expect(friend).to have_key(:friend_id)
+        expect(friend).to have_key(:kwh_usage)
+      end 
+    end
+  end
 
-#       get '/api/v1/friendships', params: {id: user_id, friend_ids: friend_ids}
-#       expect(response.status).to eq(200)
-#       data = JSON.parse(response.body, symbolize_names:true)
+  describe "friendship create" do 
+    it "posts user id and friend is as a friendship record" do 
+      friendship_params = ({user_id:101, following_id:202})
+      headers = {"CONTENT_TYPE" => "application/json"}
 
-#       # expect(data).to have_key(:id)
-#       # expect(data).to have_key(:type)
-#       expect(data).to have_key(:attributes)
-#       expect(data[:attributes][:user_id]).to eq(user_id)
-#       expect(data[:attributes][:monthly_points]).to eq(Numeric)
-#       expect(data[:attributes][:friends]).to be_an(Hash) 
-#       # user_usage = Usage.find_by(user_id: user_id)
-#     end
-#   end
+      post "/api/v1/friendships", headers: headers, params: JSON.generate({friendship: friendship_params})
+      created_friendship = Friendship.last
 
-#   describe "friendship create" do 
-#     it "posts user id and friend is as a friendship record" do 
-#       friendship_params = ({user_id:101, following_id:202})
-#       headers = {"CONTENT_TYPE" => "application/json"}
+      expect(response.status).to eq(201)
+      expect(created_friendship.user_id.to_i).to eq(friendship_params[:user_id])
+      expect(created_friendship.following_id.to_i).to eq(friendship_params[:following_id])
+    end
 
-#       post "/api/v1/friendships", headers: headers, params: JSON.generate({friendship: friendship_params})
+    it "error 409 if incorrect friendship_params" do 
+      friendship_params = ({user_id:101})
+      headers = {"CONTENT_TYPE" => "application/json"}
 
-#       created_friendship = Friendship.last
+      post "/api/v1/friendships", headers: headers, params: JSON.generate({friendship: friendship_params})
 
-#       expect(response.status).to eq(201)
-#       expect(created_friendship.user_id.to_i).to eq(friendship_params[:user_id])
-#       expect(created_friendship.following_id.to_i).to eq(friendship_params[:following_id])
-#     end
+      created_friendship = Friendship.last
 
-#     it "error 409 if incorrect friendship_params" do 
-#       friendship_params = ({user_id:101})
-#       headers = {"CONTENT_TYPE" => "application/json"}
-
-#       post "/api/v1/friendships", headers: headers, params: JSON.generate({friendship: friendship_params})
-
-#       created_friendship = Friendship.last
-
-#       expect(response.status).to eq(409)
-#     end
-#   end
-# end
+      expect(response.status).to eq(409)
+    end
+  end
+end
