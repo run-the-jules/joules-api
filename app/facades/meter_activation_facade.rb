@@ -22,11 +22,10 @@ class MeterActivationFacade
 
     def create_usage(data)
       Usage.create(user_id: data[:user_uid],
-                  kwh: data[:kwh],
-                  meter_id: data[:meter_uid],
-                  start_date: data[:start_date],
-                  end_date: data[:end_date])
-
+                   kwh: data[:kwh],
+                   meter_id: data[:meter_uid],
+                   start_date: data[:start_date],
+                   end_date: data[:end_date])
     end
   end
 end
