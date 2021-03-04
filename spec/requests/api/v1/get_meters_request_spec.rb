@@ -16,8 +16,17 @@ RSpec.describe 'get meter controller' do
     get '/api/v1/get_meters?referral=186139&id=1'
     expect(response.status).to eq(200)
     data = JSON.parse(response.body, symbolize_names: true)
-    expect(data).to have_key(:error)
-    expect(data[:error]).to be_a(String)
+    expect(data).to have_key(:data)
+    expect(data[:data]).to be_a(String)
+  end
+
+  it 'gets meters', :vcr do 
+    get '/api/v1/get_meters?referral=186139&id=1'
+    
+    expect(response.status).to eq(200)
+    data = JSON.parse(response.body, symbolize_names: true)
+    expect(data).to have_key(:data)
+    expect(data[:data]).to be_a(String)
   end
 
   it 'sad path' do
@@ -70,8 +79,8 @@ RSpec.describe 'get meter controller' do
 
     expect(response.status).to eq(200)
     data = JSON.parse(response.body, symbolize_names: true)
-    expect(data).to have_key(:error)
-    expect(data[:error]).to be_a(String)
+    expect(data).to have_key(:data)
+    expect(data[:data]).to be_a(String)
 
   end
 end
