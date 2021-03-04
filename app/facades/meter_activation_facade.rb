@@ -9,7 +9,9 @@ class MeterActivationFacade
     end
 
     def referral(params)
-      UsageService.get_meters(params[:referral])[:data]
+      referral = UsageService.get_meters(params[:referral])[:data]
+      binding.pry
+      nextcode = 25
     end
 
     def parse_meters(meters, id)
@@ -27,10 +29,10 @@ class MeterActivationFacade
         usages = bills.map do |bill|
           create_usage(bill, id)
         end
+        usages
       else
         nil
       end
-      usages
     end
 
     private
