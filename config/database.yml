@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  reconnect: true
   database: jules_api_development
 
   # The specified database role being used to connect to postgres.
@@ -80,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  reconnect: true
   database: jules_api_production
   username: jules_api
   password: <%= ENV['JULES_API_DATABASE_PASSWORD'] %>

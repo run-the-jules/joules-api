@@ -14,6 +14,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'fast_jsonapi'
 gem 'faraday'
 gem 'figaro'
+gem 'spawnling', '~>2.1'
+
 
 group :development, :test do
   gem 'pry'
