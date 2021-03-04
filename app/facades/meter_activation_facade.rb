@@ -9,9 +9,11 @@ class MeterActivationFacade
     end
 
     def referral(params)
-      referral = UsageService.get_meters(params[:referral])[:data]
-      binding.pry
-      nextcode = 25
+      if params[:referral].to_i != 0
+        UsageService.get_meters(params[:referral])[:data]
+      else
+        nil
+      end
     end
 
     def parse_meters(meters, id)

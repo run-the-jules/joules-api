@@ -7,7 +7,12 @@ class Api::V1::GetMetersController < ApplicationController
     if params[:referral].to_i != 0
       begin
         @meters = MeterActivationFacade.referral(params)
-        render json: {error: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."}
+        if @meters == nil
+          @skip_after_action = true
+          something_went_wrong
+        else
+          render json: {error: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."}
+        end
       rescue
         @skip_after_action = true
         something_went_wrong

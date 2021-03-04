@@ -29,17 +29,23 @@ RSpec.describe 'get meter controller' do
     expect(data).to have_key(:error)
   end
 
-  it 'returns an error when referral params are not present or a number', :vcr do
+  it 'returns an error when referral params are not present or a number' do
     get '/api/v1/get_meters?referral='
     expect(response.status).to eq(404)
     get '/api/v1/get_meters?referral=notareferral'
     expect(response.status).to eq(404)
   end
 
-  it 'returns an error when referral params are not valid', :vcr do
+  it 'returns an error when referral params are not valid' do
+    meters = {"data": nil }.to_json
+    stub_request(:get, /meters/).to_return(
+      status: 200, body: meters
+    )
     get '/api/v1/get_meters?referral=23498710283918724'
-    expect(response.status).to eq(200)
+    expect(response.status).to eq(404)
     expect(response.body).to be_a(String)
-    expect(response.body).to eq('null')
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(data[:error]).to eq("Something went wrong.  Please try again later.")
   end
 end

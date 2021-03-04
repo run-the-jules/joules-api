@@ -8,10 +8,10 @@ class ApplicationController < ActionController::API
   end
 
   def something_went_wrong
-    render json: { error: "Something went wrong.  Please try again later."}, status: 400
+    render json: { error: "Something went wrong.  Please try again later."}, status: 404
   end
 
   def bills_arent_ready
-    render json: { error: "Your bills aren't ready yet. Please try again later."}, status: 400
+    render json: { error: "Your bills aren't ready yet. Please try again later."}, status: 404
   end
 end
