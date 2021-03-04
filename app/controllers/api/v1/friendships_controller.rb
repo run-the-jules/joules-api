@@ -9,8 +9,8 @@ class Api::V1::FriendshipsController < ApplicationController
   end
 
   def show
-    friendships = Friendship.where(user_id: params[:user_id])
-    render json: FriendshipSerializer(friendships)
+    friendships = Friendship.where(user_id: params[:id])
+    render json: FriendshipSerializer.new(friendships)
   end
 
   def create
