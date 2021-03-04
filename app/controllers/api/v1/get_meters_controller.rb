@@ -9,7 +9,7 @@ class Api::V1::GetMetersController < ApplicationController
       Spawnling.new do
         get_bills unless @skip_after_action
       end
-        render( json: {error: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."})
+        render( json: {data: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."})
       end
     else
       @skip_after_action = true
