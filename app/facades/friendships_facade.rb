@@ -2,12 +2,15 @@ class FriendshipsFacade
   class << self 
     def compare(user_id, friend_ids)
       friend_ids.map!(&:to_i)
-      user_kwh = Usage.find_by(user_id: user_id).kwh
-      Friends.new({user_id: user_id, 
-        user_kwh: user_kwh, 
+      usage = Usage.find_by(user_id: user_id)
+      Friends.new({user_id: usage.user_id, 
+        user_kwh: usage.kwh,
+        end_date: usage.end_date,
         friends: friend_ids.map do |friend_id|
-      {friend_id: friend_id, 
-        kwh_usage: Usage.find_by(user_id: friend_id).kwh}
+          usage = Usage.find_by(user_id: friend_id)
+      {friend_id: usage.user_id, 
+        kwh_usage: usage.kwh,
+        end_date: usage.end_date}
       end
       })
     end

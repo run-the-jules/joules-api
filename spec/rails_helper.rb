@@ -7,6 +7,12 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'simplecov'
 SimpleCov.start
+SimpleCov.add_filter %W[
+  app/helpers
+  app/controllers/application_controller
+  config
+  spec
+]
 require 'webmock/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 

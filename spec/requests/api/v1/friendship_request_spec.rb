@@ -13,9 +13,10 @@ RSpec.describe 'friendship request' do
       friend_ids = users[0..-1].map { |friendship| friendship.following_id }
       get '/api/v1/friendships', params: { user_id: user_id }
       expect(response.status).to eq(200)
-      data = JSON.parse(response.body, symbolize_names: true)[:data]
-      expect(data[:type]).to eq('friend_usage')
-      expect(data[:attributes][:user_id]).to eq(user_id)
+      data = JSON.parse(response.body, symbolize_names:true)[:data]
+      expect(data[:type]).to eq("friend_usage")
+      expect(data[:attributes][:user_id]).to eq(user_id.to_i)
+
       expect(data[:attributes]).to have_key(:user_kwh)
       data[:attributes][:friends_data].each do |friend, _idx|
         expect(friend).to have_key(:friend_id)

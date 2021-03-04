@@ -29,7 +29,9 @@ describe MeterActivationFacade do
       params = { referral: 'not a referral' }
       data = MeterActivationFacade.referral(params)
       expect(data).to eq(nil)
-
+    end
+    
+    it 'returns error if referral is empty', :vcr do
       params = { referral: '' }
       data = MeterActivationFacade.referral(params)
       expect(data).to eq(nil)

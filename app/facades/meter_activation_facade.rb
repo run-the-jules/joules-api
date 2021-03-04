@@ -1,20 +1,35 @@
 class MeterActivationFacade
   class << self
+    def new_user(params)
+      UsageService.new_user(params)
+    end
+
     def referral(params)
-      data = UsageService.get_meters(params[:referral])[:data]
-      # sleep 30
-      unless data.nil?
-        data.each do |meter|
-          get_bills(meter[:meter_uid], params[:id])
+      if params[:referral].to_i != 0
+        UsageService.get_meters(params[:referral])[:data]
+      else
+        nil
+      end
+    end
+
+    def parse_meters(meters, id)
+      unless meters.nil?
+        usages = meters.flat_map do |meter|
+          get_bills(meter[:meter_uid], id)
         end
       end
-      data
+      usages
     end
 
     def get_bills(meter_uid, id)
       bills = UsageService.get_bills(meter_uid)[:data]
-      bills.map do |bill|
-        create_usage(bill, id)
+      if bills.class == Array
+        usages = bills.map do |bill|
+          create_usage(bill, id)
+        end
+        usages
+      else
+        nil
       end
     end
 
