@@ -1,11 +1,7 @@
 class MeterActivationFacade
   class << self
-    def fetch_utilities(params)
-      UsageService.fetch_utilities
-    end
-
     def new_user(params)
-      data = UsageService.new_user(params)[:data][:url]
+      UsageService.new_user(params)
     end
 
     def referral(params)

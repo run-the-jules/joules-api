@@ -5,17 +5,12 @@ class Api::V1::GetMetersController < ApplicationController
   end
   def index
     if params[:referral].to_i != 0
-      begin
-        @meters = MeterActivationFacade.referral(params)
-        if @meters == nil
-          @skip_after_action = true
-          something_went_wrong
-        else
-          render json: {error: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."}
-        end
-      rescue
+      @meters = MeterActivationFacade.referral(params)
+      if @meters == nil
         @skip_after_action = true
         something_went_wrong
+      else
+        render json: {error: "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."}
       end
     else
       @skip_after_action = true
@@ -31,7 +26,7 @@ class Api::V1::GetMetersController < ApplicationController
     else
       bills = MeterActivationFacade.parse_meters(@meters, params[:id])
       if bills.nil? || bills.first.nil?
-        sleep 5
+        sleep 5.minutes
         get_bills
       end
     end

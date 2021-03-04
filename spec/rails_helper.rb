@@ -9,6 +9,7 @@ require 'simplecov'
 SimpleCov.start
 SimpleCov.add_filter %W[
   app/helpers
+  app/controllers/application_controller
   config
   spec
 ]

@@ -37,5 +37,14 @@ RSpec.describe 'usage request' do
       expect(result).to be_a(Hash)
       expect(result).to have_key(:error)
     end
+
+    it 'can sad path routing error' do
+      get "/api/v1/get_bills"
+
+      expect(response).to_not be_successful
+      result = JSON.parse(response.body, symbolize_names:true)
+
+      expect(result).to have_key(:error)
+    end
   end
 end
