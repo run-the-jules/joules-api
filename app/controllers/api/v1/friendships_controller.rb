@@ -1,12 +1,16 @@
 class Api::V1::FriendshipsController < ApplicationController
   def index
     if params[:user_id]
-      friend_ids = Friendship.friends(params[:user_id])
-      friendships = FriendshipsFacade.compare(params[:user_id], friend_ids)
+      friendships = FriendshipsFacade.compare(params[:user_id])
       render json: FriendUsageSerializer.new(friendships)
     else
       render json: { error: 'User id missing' }, status: 404
     end
+  end
+
+  def show
+    friendships = Friendship.where(user_id: params[:user_id])
+    render json: FriendshipSerializer(friendships)
   end
 
   def create
