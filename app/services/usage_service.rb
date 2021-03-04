@@ -1,10 +1,5 @@
 class UsageService
   class << self
-    def fetch_utilities
-      response = connection.get('/api/v1/utilities')
-      parse(response)
-    end
-
     def new_user(params)
       response = connection.get('/api/v1/new_user') do |req|
         req.params['email'] = params[:email]

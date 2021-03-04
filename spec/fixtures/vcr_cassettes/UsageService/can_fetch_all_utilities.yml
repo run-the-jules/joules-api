@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 03 Mar 2021 03:35:18 GMT
+      - Wed, 03 Mar 2021 23:55:24 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -55,5 +55,5 @@ http_interactions:
         California Edison"},{"id":"SDG&E","utility_name":"San Diego Gas and Electric"},{"id":"SFPUC","utility_name":"San
         Francisco Public Utilities Commission"},{"id":"SMUD","utility_name":"Sacramento
         Municipal Utility District"},{"id":"XCEL","utility_name":"Xcel Energy"}]}'
-  recorded_at: Wed, 03 Mar 2021 03:35:19 GMT
+  recorded_at: Wed, 03 Mar 2021 23:55:25 GMT
 recorded_with: VCR 6.0.0

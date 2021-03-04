@@ -4,7 +4,7 @@ describe MeterActivationFacade do
   describe 'get_bills' do
     it 'brings user utility information', :vcr do
       user_id = 2
-      meter_id = 711267
+      meter_id = 711_267
       usages = MeterActivationFacade.get_bills(meter_id, user_id)
       usages.each do |usage|
         expect(usage).to be_a(Usage)
