@@ -69,9 +69,7 @@ RSpec.describe 'friendship request' do
       create_list(:usage, 6) do |usage, i|
         usage.update(user_id: i + 1)
       end
-      users = create_list(:friendship, 5, user_id: 1) do |friendship, i|
-        friendship.update(following_id: (2 + i))
-      end
+      users = create_list(:friendship, 5, user_id: 1)
       user_id = users[0].user_id
       friend_ids = users[0..-1].map { |friendship| friendship.following_id }
       get '/api/v1/friendships', params: {}
