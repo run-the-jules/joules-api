@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'providers api endpoint', type: :request do
-  describe '(happy path)', :vcr do
+  describe '(happy path)' do
     it 'returns a list of all available providers', :vcr do
       VCR.use_cassette('/Users/kaiheiongaku/turing/mod3/projects/jules_api/spec/fixtures/vcr_cassettes/providers_api_endpoint/_happy_path_/returns_a_list_of_all_available_providers.yml') do
         get '/api/v1/providers'
