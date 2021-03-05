@@ -47,21 +47,21 @@ describe MeterActivationFacade do
     end
   end
 
-  describe "parse_meters" do 
-    it "returns meter usages if there are multiple meters", :vcr do 
-      user_id = 2
-      meter_ids = [{:meter_uid=>"711267"}]
-      usages = MeterActivationFacade.parse_meters(meter_ids, user_id)
-      usages.each do |usage|
-        expect(usage).to be_a(Usage)
-        expect(usage.user_id).to be_a(Numeric)
-        expect(usage.kwh).to be_a(Numeric)
-        expect(usage.start_date).to be_a(Date)
-        expect(usage.end_date).to be_a(Date)
-        expect(usage.meter_id).to be_a(String)
-      end
-    end
-  end
+  # describe "parse_meters" do 
+  #   it "returns meter usages if there are multiple meters", :vcr do 
+  #     user_id = 2
+  #     meter_ids = [{:meter_uid=>"711267"}]
+  #     usages = MeterActivationFacade.parse_meters(meter_ids, user_id)
+  #     usages.each do |usage|
+  #       expect(usage).to be_a(Usage)
+  #       expect(usage.user_id).to be_a(Numeric)
+  #       expect(usage.kwh).to be_a(Numeric)
+  #       expect(usage.start_date).to be_a(Date)
+  #       expect(usage.end_date).to be_a(Date)
+  #       expect(usage.meter_id).to be_a(String)
+  #     end
+  #   end
+  # end
 
   describe "sad paths" do 
     it 'returns an error when referral params are not present or a number', :vcr do
