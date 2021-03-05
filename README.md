@@ -89,7 +89,7 @@ Deployed on Heroku, see endpoints
 `https://jules-api.herokuapp.com/api/v1/friendships?user_id={user_id}`
 
 ## Database Schema
-![Schema](media/Database_Schema.png)
+![Screen Shot 2021-03-04 at 9 16 01 PM](https://user-images.githubusercontent.com/64919819/110066871-b0ea1d80-7d2f-11eb-9181-097afe165e07.png)
 
 
 <!-- CONTRIBUTING -->
