@@ -1,0 +1,567 @@
+User Usages
+{
+  "data": [
+      {
+          "id": "835",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 743,
+              "start_date": "2021-01-31",
+              "end_date": "2021-02-28",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "838",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 810,
+              "start_date": "2020-10-31",
+              "end_date": "2020-11-30",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "839",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 779,
+              "start_date": "2020-09-30",
+              "end_date": "2020-10-31",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "840",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 938,
+              "start_date": "2020-08-31",
+              "end_date": "2020-09-30",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "841",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 846,
+              "start_date": "2020-07-31",
+              "end_date": "2020-08-31",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "842",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 903,
+              "start_date": "2020-06-30",
+              "end_date": "2020-07-31",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "843",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 833,
+              "start_date": "2020-05-31",
+              "end_date": "2020-06-30",
+              "meter_id": "711267"
+          }
+      },
+      {
+          "id": "844",
+          "type": "usages",
+          "attributes": {
+              "user_id": 1,
+              "kwh": 652,
+              "start_date": "2020-04-30",
+              "end_date": "2020-05-31",
+              "meter_id": "711267"
+          }
+      }
+  ]
+}
+
+Providers
+{
+  "data": [
+      {
+          "id": "ACE",
+          "type": "providers",
+          "attributes": {
+              "id": "ACE",
+              "name": "Atlantic City Electric"
+          }
+      },
+      {
+          "id": "AEPOHIO",
+          "type": "providers",
+          "attributes": {
+              "id": "AEPOHIO",
+              "name": "American Electric Power Ohio"
+          }
+      },
+      {
+          "id": "APS",
+          "type": "providers",
+          "attributes": {
+              "id": "APS",
+              "name": "Arizona Public Service Company"
+          }
+      },
+      {
+          "id": "AustinEnergy",
+          "type": "providers",
+          "attributes": {
+              "id": "AustinEnergy",
+              "name": "Austin Energy"
+          }
+      },
+      {
+          "id": "BGE",
+          "type": "providers",
+          "attributes": {
+              "id": "BGE",
+              "name": "Baltimore Gas & Electric"
+          }
+      },
+      {
+          "id": "ComEd",
+          "type": "providers",
+          "attributes": {
+              "id": "ComEd",
+              "name": "Commonwealth Edison"
+          }
+      },
+      {
+          "id": "ConEd",
+          "type": "providers",
+          "attributes": {
+              "id": "ConEd",
+              "name": "Consolidated Edison New York"
+          }
+      },
+      {
+          "id": "DOMINION",
+          "type": "providers",
+          "attributes": {
+              "id": "DOMINION",
+              "name": "Dominion Energy"
+          }
+      },
+      {
+          "id": "EVRSRC",
+          "type": "providers",
+          "attributes": {
+              "id": "EVRSRC",
+              "name": "Eversource Energy"
+          }
+      },
+      {
+          "id": "FPL",
+          "type": "providers",
+          "attributes": {
+              "id": "FPL",
+              "name": "Florida Power and Light Company"
+          }
+      },
+      {
+          "id": "HECO",
+          "type": "providers",
+          "attributes": {
+              "id": "HECO",
+              "name": "Hawaii Electric"
+          }
+      },
+      {
+          "id": "JCPL",
+          "type": "providers",
+          "attributes": {
+              "id": "JCPL",
+              "name": "Jersey Central Power and Light"
+          }
+      },
+      {
+          "id": "LADWP",
+          "type": "providers",
+          "attributes": {
+              "id": "LADWP",
+              "name": "Los Angeles Department of Water & Power"
+          }
+      },
+      {
+          "id": "NATGD",
+          "type": "providers",
+          "attributes": {
+              "id": "NATGD",
+              "name": "National Grid"
+          }
+      },
+      {
+          "id": "NVE",
+          "type": "providers",
+          "attributes": {
+              "id": "NVE",
+              "name": "Nevada Energy"
+          }
+      },
+      {
+          "id": "PacPower",
+          "type": "providers",
+          "attributes": {
+              "id": "PacPower",
+              "name": "Pacific Power Utilities"
+          }
+      },
+      {
+          "id": "PECO",
+          "type": "providers",
+          "attributes": {
+              "id": "PECO",
+              "name": "PECO Energy"
+          }
+      },
+      {
+          "id": "PEPCO",
+          "type": "providers",
+          "attributes": {
+              "id": "PEPCO",
+              "name": "Potomac Electric Power Company"
+          }
+      },
+      {
+          "id": "PG&E",
+          "type": "providers",
+          "attributes": {
+              "id": "PG&E",
+              "name": "Pacific Gas and Electric"
+          }
+      },
+      {
+          "id": "PORTGE",
+          "type": "providers",
+          "attributes": {
+              "id": "PORTGE",
+              "name": "Portland General Electric"
+          }
+      },
+      {
+          "id": "PPL",
+          "type": "providers",
+          "attributes": {
+              "id": "PPL",
+              "name": "Pennsylvania Power and Light"
+          }
+      },
+      {
+          "id": "PSEG",
+          "type": "providers",
+          "attributes": {
+              "id": "PSEG",
+              "name": "Public Services Electric and Gas"
+          }
+      },
+      {
+          "id": "PSEGLI",
+          "type": "providers",
+          "attributes": {
+              "id": "PSEGLI",
+              "name": "Public Services Electric and Gas - Long Island"
+          }
+      },
+      {
+          "id": "RMP",
+          "type": "providers",
+          "attributes": {
+              "id": "RMP",
+              "name": "Rocky Mountain Power"
+          }
+      },
+      {
+          "id": "SCE",
+          "type": "providers",
+          "attributes": {
+              "id": "SCE",
+              "name": "Southern California Edison"
+          }
+      },
+      {
+          "id": "SDG&E",
+          "type": "providers",
+          "attributes": {
+              "id": "SDG&E",
+              "name": "San Diego Gas and Electric"
+          }
+      },
+      {
+          "id": "SFPUC",
+          "type": "providers",
+          "attributes": {
+              "id": "SFPUC",
+              "name": "San Francisco Public Utilities Commission"
+          }
+      },
+      {
+          "id": "SMUD",
+          "type": "providers",
+          "attributes": {
+              "id": "SMUD",
+              "name": "Sacramento Municipal Utility District"
+          }
+      },
+      {
+          "id": "XCEL",
+          "type": "providers",
+          "attributes": {
+              "id": "XCEL",
+              "name": "Xcel Energy"
+          }
+      }
+  ]
+}
+
+New User Sign Up
+https://utilityapi.com/authorize/iandouglas_turing?f=6c294469-cf1e-4711-8d13-6da30da10b74
+
+
+Get Meters
+{
+  "data": "Your Meters have been pulled and bills are being generated, please check back in 15 minutes."
+}
+
+
+Friend Usages
+{
+  "data": {
+      "id": null,
+      "type": "friend_usage",
+      "attributes": {
+          "user_id": 1,
+          "end_date": "2021-02-28",
+          "user_kwh": 743,
+          "friends_data": [
+              {
+                  "friend_id": 2,
+                  "kwh_usage": 1200,
+                  "end_date": "2020-01-31"
+              },
+              {
+                  "friend_id": 3,
+                  "kwh_usage": 400,
+                  "end_date": "2021-01-31"
+              },
+              {
+                  "friend_id": 4,
+                  "kwh_usage": 950,
+                  "end_date": "2020-12-31"
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              },
+              {
+                  "friend_id": 5,
+                  "kwh_usage": 900,
+                  "end_date": null
+              }
+          ]
+      }
+  }
+}
+
+Friendship Post Request
+{
+  "data": {
+      "following_id": [
+          "has already been taken"
+      ]
+  }
+}
+
+
+Friend IDs
+{
+  "data": [
+      {
+          "id": "8",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "2"
+          }
+      },
+      {
+          "id": "9",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "3"
+          }
+      },
+      {
+          "id": "10",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "4"
+          }
+      },
+      {
+          "id": "13",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "14",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "15",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "16",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "17",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "18",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "19",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "20",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "21",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "22",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "23",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      },
+      {
+          "id": "25",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "5"
+          }
+      }
+  ]
+}
