@@ -70,6 +70,20 @@ Deployed on Heroku, see endpoints
 <!-- GETTING STARTED -->
 ## Getting Started
 
+### Installation
+
+1. Fork and Clone the repo
+   ```
+   git clone git@github.com:run-the-jules/jules-api.git
+   ```
+2. Install gems
+   ```
+   bundle install
+   ```
+3. Setup the database: 
+   ```
+   rails db:setup
+   ```
 
 ## Endpoints
 [sample data](media/responses.json)
