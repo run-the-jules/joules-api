@@ -16,14 +16,14 @@ Jules API is the server-side application of Run the Jules. It consumes the utili
 "jules-api" is the backend API only application that handles the bulk of data interface for other applications. jules-api is part of a consultancy group project Run The Jules that student chosen project to build service-oreinted architecture application that allows the user to authenticate through Google and their electricity provider to compare their energy usage with other users.
 
 ### Goals accomplished
-Consumed microservice API endpoints to package data for the frontend to consume
-Robust unit and integration testing to ensure data quality
-Navigate working together with a larger application base with many moving parts
-Learned application design from the perspective of users' needs
-Navigate how a small change can have huge impact in a SOA application
-Setup continuous integration and deployment
-Worked in short 3 or 4 day "Sprints" schedule
-Worked in pairs
+Consumed microservice API endpoints to package data for the frontend to consume  
+Robust unit and integration testing to ensure data quality  
+Navigate working together with a larger application base with many moving parts  
+Learned application design from the perspective of users' needs  
+Navigate how a small change can have huge impact in a SOA application  
+Setup continuous integration and deployment  
+Worked in short 3 or 4 day "Sprints" schedule  
+Worked in pairs  
 Deployed on Heroku, see endpoints
 
 
@@ -70,23 +70,46 @@ Deployed on Heroku, see endpoints
 <!-- GETTING STARTED -->
 ## Getting Started
 
+### Installation
+
+1. Fork and Clone the repo
+   ```
+   git clone git@github.com:run-the-jules/jules-api.git
+   ```
+2. Install gems
+   ```
+   bundle install
+   ```
+3. Setup the database: 
+   ```
+   rails db:setup
+   ```
 
 ## Endpoints
+[sample data](media/responses.json)
 
-### Utility Providers
-`https://jules-api.herokuapp.com/api/v1/providers`
-### User Authentication Through Provider
-`https://jules-api.herokuapp.com/api/v1/new_users?{user_email}&utility={provider name}`  
-  _user will be given an authentication url and once authenticated an referral number is provided_
-
-`https://jules-api.herokuapp.com/api/v1/get_meters?referral={referral_number}`  
-  _a meter activation request is sent on our end when the referral number is provided_
-
-
-
+#### Usages
 ### User Data
 `https://jules-api.herokuapp.com/api/v1/usages/{user_id}`  
 `https://jules-api.herokuapp.com/api/v1/friendships?user_id={user_id}`
+### Utility Providers
+`https://jules-api.herokuapp.com/api/v1/providers`
+### User Authentication Through Provider
+`https://jules-api.herokuapp.com/api/v1/new_users?email={user_email}&utility={provider_name}`  
+  _user will be given an authentication url and once authenticated an referral number is provided_
+#### Referal
+`https://jules-api.herokuapp.com/api/v1/get_meters?referral={referral_number}`  
+  _a meter activation request is sent on our end when the referral number is provided_
+### Friendship table
+#### Relationships
+`https://jules-api.herokuapp.com/api/v1/friendships/1?user_id={user_id}`
+
+#### Post Request
+`https://jules-api.herokuapp.com//api/v1/friendships`
+Strong Params {"friendship":{"user_id":"101", "following_id":"202"}}
+
+
+
 
 ## Database Schema
 ![Screen Shot 2021-03-04 at 9 16 01 PM](https://user-images.githubusercontent.com/64919819/110066871-b0ea1d80-7d2f-11eb-9181-097afe165e07.png)
