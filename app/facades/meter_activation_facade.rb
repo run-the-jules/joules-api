@@ -36,7 +36,7 @@ class MeterActivationFacade
     private
 
     def create_usage(data, id)
-      Usage.create(user_id: id,
+      Usage.find_or_create_by(user_id: id,
                    kwh: data[:kwh],
                    meter_id: data[:meter_uid],
                    start_date: data[:start_date],

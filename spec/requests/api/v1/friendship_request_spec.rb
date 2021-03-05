@@ -25,6 +25,22 @@ RSpec.describe 'friendship request' do
     end
   end
 
+  describe 'friendship show' do 
+    it "returns friendship data with user id and friend ids" do 
+      users = create_list(:friendship, 5, user_id: 1)
+      user_id = users[0].user_id
+      friend_ids = users[0..-1].map { |friendship| friendship.following_id }
+      get '/api/v1/friendships/1', params: { user_id: user_id }
+      expect(response.status).to eq(200)
+      data = JSON.parse(response.body, symbolize_names: true)[:data]
+      data.each do |friendship|
+        expect(friendship[:type]).to eq("friendship")
+        expect(friendship[:attributes][:user_id]).to eq(user_id)
+        expect(friendship[:attributes][:following_id]).to be_a(String)
+      end
+    end
+  end
+
   describe 'friendship create' do
     it 'posts user id and friend is as a friendship record' do
       friendship_params = { user_id: 101, following_id: 202 }

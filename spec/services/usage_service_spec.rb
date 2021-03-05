@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe UsageService do
-  it 'can get bills' do
-    usage_stub_2 = File.read('spec/fixtures/demo_bills.json')
-    stub_request(:get, /bills/).to_return(
-      status: 200, body: usage_stub_2
-    )
+  it 'can get bills', :vcr do
+    # usage_stub_2 = File.read('spec/fixtures/demo_bills.json')
+    # stub_request(:get, /bills/).to_return(
+    #   status: 200, body: usage_stub_2
+    # )
     meter_id = 711267
     data = UsageService.get_bills(meter_id)[:data]
     data.each do |cycle|
