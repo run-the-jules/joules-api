@@ -9,7 +9,7 @@
 
 ### About this App
 
-Jules API is the server-side application of Run the Jules. It consumes the utilities microservice to provide historical usage data and calcuate points for Run The Jules users. Users can sign up and compare their electricity usage with their friends or to an anonymous average in their area!
+Jules API is the server-side application of Run the Jules. It consumes the utilities microservice to provide historical usage data and calculate points for Run The Jules users. Users can sign up and compare their electricity usage with their friends or to an anonymous average in their area!
 
 ### Background and Description
 
