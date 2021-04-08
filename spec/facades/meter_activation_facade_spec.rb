@@ -30,9 +30,9 @@ describe MeterActivationFacade do
         expect(usage.end_date).to be_a(Date)
         expect(usage.meter_id).to be_a(String)
       end
-      expect(Usage.all.count).to eq(usage_count + 14)
+      expect(Usage.all.count).to eq(usage_count + 15)
       usages = MeterActivationFacade.get_bills(meter_id, user_id)
-      expect(Usage.all.count).to eq(usage_count + 14)
+      expect(Usage.all.count).to eq(usage_count + 15)
     end
   end
 

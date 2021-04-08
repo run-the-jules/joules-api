@@ -6,7 +6,7 @@ addons:
 cache:
 - bundler
 script:
-- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rails db:{drop,create,migrate} RAILS_ENV=test
 - bundle exec rspec
 deploy:
   provider: heroku
@@ -16,4 +16,3 @@ deploy:
   run: rails db:migrate
   on:
     branch: main
-  skip_cleanup: 'true'
