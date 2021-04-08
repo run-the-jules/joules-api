@@ -14,4 +14,3 @@ deploy:
   run: rails db:migrate
   on:
     branch: main
-  skip_cleanup: 'true'
